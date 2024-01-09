@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('partials/header') %>
+	<body>
+		<%- include('partials/navbar') %>
+		<main class="container d-flex flex-column align-items-stretch px-0 ms-md-5">
+			<h1 class="container"><%= mainTitle %></h1>
+			<p class="py-2 container"><%= content %></p>
+			<form action="/compose" method="post" class="container">
+				<div class="mb-3">
+					<label for="exampleFormControlInput1" class="form-label"
+						>Blog title</label
+					>
+					<input
+						type="text"
+						class="form-control"
+						id="exampleFormControlInput1"
+						name="blogTitle"
+						required
+					/>
+				</div>
+				<div class="mb-3">
+					<label for="exampleFormControlTextarea1" class="form-label"
+						>Write your Blog here</label
+					>
+					<textarea
+						class="form-control"
+						id="exampleFormControlTextarea1"
+						rows="3"
+						name="blogText"
+						required
+					></textarea>
+				</div>
+				<div class="mb-3">
+					<button type="submit" class="btn my-btn mb-3 px-4">
+						Publish blog
+					</button>
+				</div>
+			</form>
+		</main>
+
+		<%- include('partials/footer') %>
+	</body>
+</html>

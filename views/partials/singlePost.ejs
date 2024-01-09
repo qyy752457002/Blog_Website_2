@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('header') %>
+	<body class="w-100 h-100">
+		<%- include('navbar', {mainTitle:''}) %>
+		<main
+			class="container d-flex flex-column align-items-stretch px-0 ms-md-5 h-100"
+		>
+			<article class="container d-flex flex-column">
+				<div class="card mt-3 shadow p-2">
+					<div class="card-body">
+						<h1 class="card-title"><%= blogTitle %></h1>
+						<p class="card-text my-5"><%= blogBody %></p>
+						<p class="card-text">
+							<small class="text-body-secondary">
+								Created: <%= blogCreated %></small
+							>
+						</p>
+						<a class="purple-link" href="/"> Go back</a>
+					</div>
+				</div>
+			</article>
+		</main>
+
+		<%- include('footer',{mainTitle:''}) %>
+	</body>
+</html>

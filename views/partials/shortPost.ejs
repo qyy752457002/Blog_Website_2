@@ -1,0 +1,13 @@
+<article class="container d-flex flex-column">
+	<div class="card mb-3 border-0 shadow">
+		<div class="card-body">
+			<h2 class="card-title"><%= blogTitle %></h2>
+			<p class="card-text"><%= blogBody.slice(0,200) %> ...</p>
+			<p class="card-text">
+				<small class="text-body-secondary">Created: <%= timeCreated %></small>
+			</p>
+			<a class="purple-link" href="<%='/' + id %>"> Read more...</a>
+			<a class="red-link" href="<%='/delete/' + id %>"> Delete...</a>
+		</div>
+	</div>
+</article>

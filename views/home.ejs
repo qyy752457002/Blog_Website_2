@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('partials/header') %>
+	<body class="w-100 h-100">
+		<%- include('partials/navbar') %>
+		<main class="container d-flex flex-column align-items-stretch px-0 mx-auto">
+			<h1 class="container"><%= mainTitle %></h1>
+			<p class="py-2 container"><%= startingContent %></p>
+			<% blogs.forEach( (blog)=> { %>
+			<p class="py-2 container">
+				<%- include('partials/shortPost', {blogTitle: blog.blogTitle,
+				blogBody:blog.blogBody, timeCreated: blog.blogCreated, id: blog._id}) %>
+			</p>
+			<% }) %>
+		</main>
+
+		<%- include('partials/footer') %>
+	</body>
+</html>
