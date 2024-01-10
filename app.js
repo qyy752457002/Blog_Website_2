@@ -13,8 +13,6 @@ const contactContent = "Don't miss out on any updates! Subscribe to my newslette
 	
 const composeContent = 	"Write your blog post here, click publish when you ready to publish."
 
-const day = currentTime()
-
 //set up app
 const app = express()
 app.set('view engine', 'ejs')
@@ -74,7 +72,6 @@ app.get('/', (req, res) => {
             res.status(500).send('Error occurred while fetching data');
         });
 });
-
 
 app.get('/about', (req, res) => {
 	res.render('about', { content: aboutContent, mainTitle: 'About' })
@@ -146,7 +143,6 @@ app.post('/compose', (req, res) => {
 	}
 })
 
-// Server Listening:
 app.listen(PORT, function() {
 	console.log("Server running on port 3000.");
 });
