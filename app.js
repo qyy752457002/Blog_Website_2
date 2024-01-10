@@ -65,7 +65,7 @@ const secondPost = new Blog({
 	blogCreated: day,
 })
 
-const blogsArr = [firstPost, secondPost]
+const blogsArr = []
 
 // Add this route handler before your other routes
 app.get('/favicon.ico', (req, res) => {
