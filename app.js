@@ -5,17 +5,14 @@ const mongoose = require('mongoose')
 const currentTime = require(__dirname + '/getDateString')
 const PORT = process.env.PORT || 3000
 
-const homeContent =
-	"Chuck Norris is so fast, he can run around the world and punch himself in the back of the head If you spell Chuck Norris in Scrabble, you win. Forever If you ask Chuck Norris what time it is, he always says, 'Two seconds 'til.' After you ask, 'Two seconds 'til what?' he roundhouse kicks you in the face If you ask Chuck Norris what time it is, he always says, 'Two seconds 'til.' After you ask, 'Two seconds 'til what?' he roundhouse kicks you in the face, Chuck Norris can lead a horse to water AND make it drink Contrary to popular belief, Chuck Norris, not the box jellyfish of northern Australia, is the most venomous creature on earth. Chuck Norris counted to infinity - twice, Chuck Norris has two speeds. Walk, and Kill, Chuck Norris was refused a part in the movie SAW because the traps would have taken him 1 second to escape and roundhouse kick Jiggysaw in the face. When Chuck Norris sends in his taxes, he sends blank forms and includes only a picture of himself, crouched and ready to attack. Chuck Norris has not had to pay taxes, ever Outer space exists because it's afraid to be on the same planet with Chuck Norris The Great Wall of China was originally created to keep Chuck Norris out. It failed miserably. Chuck Norris is currently suing NBC, claiming Law and Order are trademarked names for his left and right legs. When Superman takes a day off, he calls Chuck Norris to fill in for him."
+const homeContent = "Hello and welcome! I'm Yiyu Qian, and this is my little corner on the internet where I share my thoughts, experiences, and insights. Whether you're here for inspiration, information, or just a bit of a read, I'm glad you stopped by."
 
-const aboutContent =
-	'Pudding bear claw halvah pastry cake gummi bears. Cheesecake candy canes sesame snaps halvah chocolate I love chupa chups. Jelly-o toffee soufflé marzipan pie pastry brownie. Carrot cake donut icing croissant brownie I love. Jelly icing chocolate bar pudding topping sesame snaps. Pastry biscuit powder wafer lollipop powder. Soufflé cake jelly beans candy cake. Pudding pie bonbon candy canes topping bear claw jelly-o I love. Chocolate bar chupa chups dragée donut macaroon. Powder marshmallow dessert jujubes fruitcake. Jujubes icing candy canes gingerbread lollipop cake pastry. Shortbread pudding chocolate cake I love I love shortbread.'
+const aboutContent = "This blog is a tapestry of the things I love and the lessons I've learned. You'll find a range of topics here - from personal development to travel adventures, from technological innovations to the simple joys of everyday life. My goal is to create content that not only informs but also inspires and engages."
 
-const contactContent =
-	'Cake ice cream brownie powder lollipop sweet roll. Biscuit tootsie roll candy canes icing chupa chups. Liquorice jelly-o liquorice chocolate gummies. I love candy canes caramels lollipop apple pie. Candy I love carrot cake tart cupcake. Sugar plum jelly beans sugar plum jelly beans caramels. Bear claw powder danish jelly muffin shortbread lemon drops biscuit shortbread. Carrot cake donut chupa chups I love dessert oat cake gummi bears. Carrot cake pie croissant fruitcake cupcake pudding lollipop caramels. Candy canes powder bonbon jelly-o chocolate bar gingerbread pie. Cheesecake carrot cake pastry cheesecake chocolate cake lemon drops oat cake. Bear claw candy toffee pudding chocolate I love. Pastry I love danish sweet roll liquorice donut jelly-o toffee.'
+const contactContent = "Don't miss out on any updates! Subscribe to my newsletter and follow me on social media for the latest posts, tips, and behind-the-scenes glimpses."
+	
+const composeContent = 	"Write your blog post here, click publish when you ready to publish."
 
-const composeContent =
-	'Write your blog post here, click publish when you ready to publish.'
 const day = currentTime()
 
 //set up app
@@ -27,7 +24,7 @@ app.use(express.static('public'))
 // set up mongoose
 // create MongoDB database
 mongoose
-    .connect("mongodb://localhost:27017/capstone_blogDB", { useNewUrlParser: true })
+    .connect("mongodb+srv://Krismile:Qyy2614102@todolistcluster.dalyaca.mongodb.net/blogDB", { useNewUrlParser: true })
     .then((res) => {
         console.log("链接成功");
     })
@@ -51,7 +48,7 @@ const blogsSchema = new mongoose.Schema({
 	},
 })
 
-//create model from schema
+// create model from schema as a collection
 const Blog = mongoose.model('Blog', blogsSchema)
 
 //default posts
